@@ -143,3 +143,41 @@ git push -u origin main
 ```
 
 Upon pushing to `main`, GitHub Actions will immediately trigger the `qa-quality-gate` job and execute all 67 test cases.
+
+---
+
+## 7. Live GitHub Actions Execution Verification & Evidence
+
+The repository has been successfully published to GitHub, and the first live automated CI/CD pipeline execution has completed with a status of **SUCCESS**.
+
+### 7.1 Pipeline Execution Telemetry
+
+| Parameter | Live Value |
+| :--- | :--- |
+| **Repository URL** | [https://github.com/Logesh051/payment-gateway-qa-framework](https://github.com/Logesh051/payment-gateway-qa-framework) |
+| **Git Commit** | `940cb7b` (`feat(ci): implement automated QA regression pipeline`) |
+| **Trigger Branch** | `main` |
+| **Workflow Run ID** | `44573070317` |
+| **Live Workflow Run URL** | [https://github.com/Logesh051/payment-gateway-qa-framework/actions/runs/44573070317](https://github.com/Logesh051/payment-gateway-qa-framework/actions/runs/44573070317) |
+| **Job Name** | `QA Automated Regression & Quality Gates` (Job ID: `135733117904`) |
+| **Runner OS** | `ubuntu-latest` (Linux x86_64) |
+| **Pipeline Status** | **completed** |
+| **Pipeline Conclusion** | **SUCCESS** |
+| **Total Duration** | 37 seconds |
+| **Preserved Artifact** | `qa-test-and-coverage-reports` (ID: `14554977292`, 114.5 KB) |
+
+### 7.2 Live Step Execution Breakdown
+
+```
+  Step 1: Set up job .................................... [COMPLETED: SUCCESS]
+  Step 2: Checkout Source Code .......................... [COMPLETED: SUCCESS]
+  Step 3: Set up Python 3.12 (pip cache enabled) ........ [COMPLETED: SUCCESS]
+  Step 4: Install Dependencies (requirements.txt) ....... [COMPLETED: SUCCESS]
+  Step 5: Execute QA Test Suite with Coverage ........... [COMPLETED: SUCCESS]
+          - 67 passed, 1 warning in 2.15s
+          - Code Coverage: 93.42% (≥ 90% threshold satisfied)
+  Step 6: Upload Test Report & Coverage Artifacts ....... [COMPLETED: SUCCESS]
+          - Artifact: qa-test-and-coverage-reports (114,513 bytes)
+  Step 7: Generate GitHub Actions Step Summary .......... [COMPLETED: SUCCESS]
+```
+
